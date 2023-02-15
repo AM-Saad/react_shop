@@ -1,0 +1,94 @@
+
+
+.img-input-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    font-family: sans-serif;
+    background: #ffffff05;
+    padding: var(--main-padding);
+    position: relative;
+    height: 200px;
+  }
+  .input{
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    cursor: pointer;
+    border: 1.5px dashed #999;
+    border-radius: 10px;
+  
+  }
+  .img-input-container label {
+    display: block;
+    margin: 0 auto 15px;
+    text-align: center;
+    word-wrap: break-word;
+    /* color: #1a4756 !important; */
+    height: 100%;
+    width: 100%;
+    position: relative;
+    opacity: 1;
+  }
+  .img-input-container label::before {
+    content: "";
+    height: 100%;
+    width: 150px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('https://iconape.com/wp-content/png_logo_vector/upload-5.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 99999;
+    background-position: center center;
+  }
+  
+  .img-input-container label:hover {
+    background-color: #1a475690;
+    opacity: 1;
+    
+  }
+  
+  .image-input {
+    display: none;
+    margin: 0 auto;
+  }
+  
+  #upload {
+    display: block;
+    padding: var(--m-padding);
+    border: 0;
+    margin: 0 auto;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    width: 100%;
+    border: 1px solid #fff;
+    background-color: var(--main-color);
+  }
+  
+  #upload:hover, #upload:focus {
+    background: #1AA39A !important;
+    color: #fff !important;
+  }
+  
+  #upload:active {
+    background: #13D4C8;
+    transition: 0.1s ease-in-out;
+  }
+  
+  .img-input-container img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto 15px;
+  }
+  
