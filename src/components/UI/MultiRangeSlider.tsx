@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react'
 
-import './MultiRangeSlider'
 interface Props {
     onChange: (data: { min: number, max: number }) => void;
     min: number

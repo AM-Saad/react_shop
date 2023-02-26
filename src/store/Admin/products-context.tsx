@@ -150,7 +150,9 @@ export const ProductsContextProvider: React.FC<{ children?: React.ReactNode; }> 
         setUpdatingMeta({ loading: true, error: null })
 
         const newForm = new FormData()
-        for (const img of files) newForm.append('image', img)
+        for (const img of files) {
+            newForm.append('image', img.image)
+        }
 
         const { state, message, items }: Response = await ProductRepo.upload_image(id, tag, newForm)
 

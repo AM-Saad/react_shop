@@ -34,10 +34,10 @@ const Filters: React.FC = () => {
     return (
         <>
 
-            <div className='flex flex-wrap'>
+            <div className='flex flex-wrap gap-5'>
 
-                <div className='p-2 mb-2 text-left'>
-                    <label htmlFor="featured" >Featured</label>
+                <div className='p-2 mb-2 text-left w-full md:w-64'>
+                    <label htmlFor="featured" className='text-xs font-medium text-gray-700 mb-1 block'>Featured</label>
                     <MultiSelect
                         options={[{ val: true, label: 'True' }, { val: false, label: 'False' }]}
                         trackBy="val"
@@ -57,8 +57,8 @@ const Filters: React.FC = () => {
 
                     />
                 </div>
-                <div className='p-2 mb-2 text-left'>
-                    <label htmlFor="featured" >Active</label>
+                <div className='p-2 mb-2 text-left w-full md:w-64'>
+                    <label htmlFor="featured" className='text-xs font-medium text-gray-700 mb-1 block'>Active</label>
                     <MultiSelect
                         options={[{ val: true, label: 'True' }, { val: false, label: 'False' }]}
                         trackBy="val"

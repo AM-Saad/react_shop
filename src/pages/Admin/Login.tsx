@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useReducer, useContext } from "react";
-
-import AdminContext from "../../store/Admin/admin-context";
+import AdminContext from "@/store/Admin/admin-context";
 
 
 enum ActionKind {
@@ -43,18 +42,18 @@ const passwordReducer = (state: InputState, action: Action): InputState => {
 
 
 const Login: React.FC = () => {
-    const ctx = useContext(AdminContext)
+    const { authMeta, onLogin } = useContext(AdminContext)
     const [emailState, dispatchEmailState] = useReducer(emailReducer, { value: '', isValid: false })
     const [passwordState, dispatchPasswordState] = useReducer(passwordReducer, { value: '', isValid: false })
     const [formIsValid, setFormIsValid] = useState<boolean | null>(false)
-    const [errorMsg, setErrorMsg] = useState(ctx.authMeta.error)
+    const [errorMsg, setErrorMsg] = useState(authMeta.error)
 
 
     // Submit user name
     function submit(e: React.FormEvent) {
         // Dispatch the user email to the store
         e.preventDefault()
-        ctx.onLogin(emailState.value, passwordState.value)
+        onLogin(emailState.value, passwordState.value)
     }
 
     const emailChangeHandler = (e: any) => {
@@ -75,9 +74,9 @@ const Login: React.FC = () => {
     const { isValid: passwordValid } = passwordState
 
     useEffect(() => {
-        setErrorMsg(ctx.authMeta.error)
+        setErrorMsg(authMeta.error)
         setFormIsValid(emailValid && passwordValid)
-    }, [ctx, emailValid, passwordValid])
+    }, [authMeta, emailValid, passwordValid])
 
 
     return <>
@@ -150,14 +149,13 @@ const Login: React.FC = () => {
                                 </a>
                             </div>
                         </div>
-
                         <div>
                             <button
                                 type="submit"
-                                disabled={ctx.authMeta.loading || !formIsValid}
+                                disabled={authMeta.loading || !formIsValid}
                                 className={`${!formIsValid ? 'opacity-30 ' : ' '}  w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
                             >
-                                {ctx.authMeta.loading ? 'Loading...' : 'Sign in'}
+                                {authMeta.loading ? 'Loading...' : 'Sign in'}
                             </button>
                         </div>
                     </form>

@@ -200,8 +200,7 @@ export const AdminContextProvider: React.FC<{ children?: React.ReactNode; }> = (
             setAuthMeta({ user: items.user, token: items.token, loading: false, error: null })
             setIsLoggedIn(true)
             localStorage.setItem('uid', items.token)
-            getMe()
-            return history.push('/admin/products')
+            return window.location.href = '/admin/products'
         }
         return setAuthMeta({ ...authMeta, loading: false, error: message })
 

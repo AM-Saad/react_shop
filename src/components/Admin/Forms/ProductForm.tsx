@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState, useContext } from 'react'
 import AdminContext from '../../../store/Admin/admin-context'
 import ProductContext from '../../../store/Admin/products-context'
 import UploadImage from '../../UI/UploadImageInput'
-import AdminItemGallery from '../../UI/AdminItemGallery'
+import ImagesGallery from '../Products/ImagesGallery'
 import ToggleBtn from '../../UI/ToggleBtn'
 import Product from '../../../modals/Product'
 import AttributesContainer from '../Products/AttributesContainer'
@@ -215,7 +215,7 @@ const ProductForm: React.FC<{ onCreate: (newProduct: Product) => void }> = ({ on
                         <div className='order-1 lg:order-2'>
 
                             <UploadImage childFunc={childFunc} onSelectImage={imageSelectHandler} />
-                            <AdminItemGallery images={imagesFilesPreview} onDeleteImage={deleteImageHandler} />
+                            <ImagesGallery images={imagesFilesPreview} onDeleteImage={deleteImageHandler} />
                             {imageWarning && <p className='text-yellow-600'>{imageWarning}</p>}
                             <div className='hidden lg:block'> <AttributesContainer updateAttributes={setAttributes} /></div>
 

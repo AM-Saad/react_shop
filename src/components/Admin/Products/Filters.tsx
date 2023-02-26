@@ -48,9 +48,9 @@ const Filters: React.FC = () => {
     return (
         <>
 
-            <div className='flex flex-wrap'>
-                <div className='p-2 mb-2 text-left'>
-                    <label htmlFor="desc" className='text-xs font-bold text-gray-700'>Category</label>
+            <div className='flex flex-wrap gap-5'>
+                <div className='p-2 mb-2 text-left w-full md:w-64'>
+                    <label htmlFor="desc" className='text-xs font-medium text-gray-700 mb-1 block'>Category</label>
                     {categories.length > 0 && <MultiSelect
                         options={categories.map((i) => ({ val: i._id, label: i.name }))}
                         trackBy="val"
@@ -66,8 +66,8 @@ const Filters: React.FC = () => {
 
                     />}
                 </div>
-                <div className='p-2 mb-2 text-left'>
-                    <label htmlFor="featured" className='text-xs font-bold text-gray-700'>Featured</label>
+                <div className='p-2 mb-2 text-left w-full md:w-64'>
+                    <label htmlFor="featured" className='text-xs font-medium text-gray-700 mb-1 block'>Featured</label>
                     <MultiSelect
                         options={[{ val: true, label: 'True' }, { val: false, label: 'False' }]}
                         trackBy="val"
@@ -87,8 +87,8 @@ const Filters: React.FC = () => {
 
                     />
                 </div>
-                <div className='p-2 mb-2 text-left'>
-                    <label htmlFor="featured" className='text-xs font-bold text-gray-700'>Popular</label>
+                <div className='p-2 mb-2 text-left w-full md:w-64'>
+                    <label htmlFor="featured" className='text-xs font-medium text-gray-700 mb-1 block'>Popular</label>
                     <MultiSelect
                         options={[{ val: true, label: 'True' }, { val: false, label: 'False' }]}
                         trackBy="val"
@@ -108,8 +108,8 @@ const Filters: React.FC = () => {
 
                     />
                 </div>
-                <div className='p-2 mb-2 text-left'>
-                    <label htmlFor="price" className='text-xs font-bold text-gray-700'>Price Range</label>
+                <div className='p-2 mb-2 text-left w-full md:w-64'>
+                    <label htmlFor="price" className='text-xs font-medium text-gray-700 mb-1 block'>Price Range</label>
                     <MultiRangeSlider
                         min={0}
                         max={3000}
@@ -118,8 +118,8 @@ const Filters: React.FC = () => {
 
                     />
                 </div>
-                <div className='p-2 mb-2 text-left'>
-                    <label htmlFor="price" className='text-xs font-bold text-gray-700'>Quantity</label>
+                <div className='p-2 mb-2 text-left w-full md:w-64'>
+                    <label htmlFor="price" className='text-xs font-medium text-gray-700 mb-1 block'>Quantity</label>
                     <MultiRangeSlider
                         min={0}
                         max={10000}

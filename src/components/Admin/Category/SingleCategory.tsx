@@ -4,7 +4,7 @@ import UploadImage from '../../UI/UploadImageInput'
 import EditableInput from '../../UI/EditableInput'
 import EditSubCategory from './EditSubCategory'
 import ToggleBtn from '../../UI/ToggleBtn'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { TrashIcon } from '@heroicons/react/solid'
 
 
 const SingleCategory: React.FC = () => {
@@ -46,6 +46,7 @@ const SingleCategory: React.FC = () => {
 
 
   const uploadImage = async () => {
+    console.log(imageFiles)
     const res = await upload_category_image(category!._id ?? '', imageFiles, 'Category')
     if (res) {
       setImageFiles([])
@@ -93,11 +94,9 @@ const SingleCategory: React.FC = () => {
           <div>
             {!imagePreview && <UploadImage onSelectImage={imageSelectHandler} />}
             {imagePreview && <div className="w-60 p-1 overflow-hidden rounded relative shadow m-auto mb-4" style={{ aspectRatio: '1' }}>
-              <FontAwesomeIcon
-                pull="left"
-                icon="redo"
-                onClick={() => deleteImageHandler(category.image)}
-                className='h-5 w-5 absolute top-2 right-2 bg-white rounded-full p-1 text-green-500 hover:text-green-300 cursor-pointer' />
+
+              <TrashIcon onClick={() => deleteImageHandler(category?.image || '')} className='absolute top-2 right-2 text-red-500 hover:text-red-300 cursor-pointer h-5 w-5' aria-hidden="true" />
+
               <img className='h-full w-full object-contain' src={imagePreview} />
             </div>}
 

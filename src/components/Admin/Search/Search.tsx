@@ -1,11 +1,8 @@
-import React, { useEffect, useRef, useState, useContext } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Product from '../../../modals/ProductResponse'
-import AdminContext from '../../../store/Admin/admin-context'
 import { SearchIcon } from '@heroicons/react/solid'
-import { useDetectOutsideClick } from "../../../hooks/use-detect-outside-click";
 import useWindowsResize from "../../../hooks/use-windows-resize";
 import useHttp from '../../../hooks/use-http'
-import HookResponse from '../../../modals/HookResponse'
 
 import SearchList from './SearchList'
 import CategoryInterface from '../../../modals/Category';

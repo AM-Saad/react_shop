@@ -1,8 +1,8 @@
 import { useState, useReducer, useEffect } from 'react'
 import { PlusSmIcon as PlusSmIconSolid } from '@heroicons/react/solid'
-import AttributeLine from './AttributeLine'
-import Attribute from '../../../modals/Attribute'
-import EditIcon from '../../UI/EditIcon'
+import AttributeLine from '@/components/Admin/Products/AttributeLine'
+import Attribute from '@/modals/Attribute'
+import EditIcon from '@/components/UI/EditIcon'
 
 
 
@@ -30,10 +30,10 @@ const AttributesContainer: React.FC<{ defaultVal: Attribute[], loading: boolean,
         const newAttributes = [...attributes]
         setAttributes(newAttributes)
     }
-    const cancelHandler = () =>{
+    const cancelHandler = () => {
         setAttributes(props.defaultVal)
 
-         setIsEdit(false)
+        setIsEdit(false)
     }
     useEffect(() => {
         if (!props.loading) {

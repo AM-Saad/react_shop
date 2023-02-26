@@ -14,7 +14,8 @@ import {
     CashIcon
 } from '@heroicons/react/outline'
 
-import { SearchIcon, MapIcon } from '@heroicons/react/solid'
+import { MapIcon } from '@heroicons/react/solid'
+
 import Search from '../Admin/Search/Search'
 const sidebarNavigation = [
     { name: 'Home', href: '#', icon: HomeIcon, current: false },
@@ -29,7 +30,7 @@ const userNavigation = [
     { name: 'Your Profile', href: '#' },
     { name: 'Sign out' },
 ]
-const newItemNavigation = [
+const quickNavigation = [
     { name: 'New Product', href: '/admin/products/create' },
     { name: 'New Category', href: '/admin/category/create' },
     { name: 'New Zone', href: '/admin/zones/create' },
@@ -44,15 +45,14 @@ interface Props {
 }
 export default function AdminNav(props: Props) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-    const adminCtx = useContext(AdminContext)
-    const { onLogout } = adminCtx
+    const { onLogout, authMeta, isLoggedIn } = useContext(AdminContext)
 
     return (
         <>
 
             <div className="flex min-h-screen">
                 {/* Narrow sidebar */}
-                <div className="hidden w-28 main-bg-color overflow-y-auto md:block">
+                {isLoggedIn && <div className="hidden w-28 main-bg-color overflow-y-auto md:block">
                     <div className="w-full py-6 flex flex-col items-center">
                         <div className="flex-shrink-0 flex items-center">
                             <img
@@ -84,7 +84,7 @@ export default function AdminNav(props: Props) {
                             ))}
                         </div>
                     </div>
-                </div>
+                </div>}
 
                 {/* Mobile menu */}
                 <Transition.Root show={mobileMenuOpen} as={Fragment}>
@@ -139,7 +139,7 @@ export default function AdminNav(props: Props) {
                                             alt="Workflow"
                                         />
                                     </div>
-                                    <div className="mt-5 flex-1 h-0 px-2 overflow-y-auto">
+                                    {isLoggedIn && <div className="mt-5 flex-1 h-0 px-2 overflow-y-auto">
                                         <nav className="h-full flex flex-col">
                                             <div className="space-y-1">
                                                 {sidebarNavigation.map((item) => (
@@ -166,7 +166,7 @@ export default function AdminNav(props: Props) {
                                                 ))}
                                             </div>
                                         </nav>
-                                    </div>
+                                    </div>}
                                 </Dialog.Panel>
                             </Transition.Child>
                             <div className="flex-shrink-0 w-14" aria-hidden="true">
@@ -188,11 +188,9 @@ export default function AdminNav(props: Props) {
                                 <span className="sr-only">Open sidebar</span>
                                 <MenuAlt2Icon className="h-6 w-6" aria-hidden="true" />
                             </button>
-                            <div className="flex-1 flex justify-between items-center px-4 sm:px-6 sm:relative">
+                            {isLoggedIn && <div className="flex-1 flex justify-between items-center px-4 sm:px-6 sm:relative">
 
                                 <Search />
-
-
 
                                 <div className="ml-2 flex items-center space-x-4 sm:ml-6 sm:space-x-6">
                                     {/* Profile dropdown */}
@@ -254,7 +252,7 @@ export default function AdminNav(props: Props) {
                                             leaveTo="transform opacity-0 scale-95"
                                         >
                                             <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                                {newItemNavigation.map((item) => (
+                                                {quickNavigation.map((item) => (
                                                     <Menu.Item key={item.name}>
                                                         {({ active }) => (
                                                             <Link
@@ -273,9 +271,10 @@ export default function AdminNav(props: Props) {
                                         </Transition>
                                     </Menu>
 
-
                                 </div>
-                            </div>
+                            </div>}
+
+                            
                         </div>
                     </header>
 

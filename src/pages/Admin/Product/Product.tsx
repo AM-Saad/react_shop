@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import AdminContext from '../../../store/Admin/admin-context'
-import ProductsContext from '../../../store/Admin/products-context'
-import SingleProduct from '../../../components/Admin/Products/SingleProduct'
-import FetchError from '../../../components/Common/FetchError'
-import Modal from '../../../components/UI/Modal'
-import ConfirmDeleteItem from '../../../components/Common/ConfirmDeleteItem'
+import AdminContext from '@/store/Admin/admin-context'
+import ProductsContext from '@/store/Admin/products-context'
+import SingleProduct from '@/components/Admin/Products/SingleProduct'
+import FetchError from '@/components/Common/FetchError'
+import Modal from '@/components/UI/Modal'
+import ConfirmDeleteItem from '@/components/Common/ConfirmDeleteItem'
 const Product = () => {
     const params = useParams()
     const { slug }: any = params

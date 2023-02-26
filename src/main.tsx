@@ -16,13 +16,14 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <ToastContainer
         toastStyle={{ fontSize: '1rem', color: 'white' }}
         theme="colored"
-        position="top-right"
-        autoClose={3000}
+        position="bottom-left"
+        autoClose={4000}
         newestOnTop
         closeOnClick
         pauseOnFocusLoss={false}
         draggable
         pauseOnHover={false}
+        
       />
     {/* </React.StrictMode> */}
   </BrowserRouter>

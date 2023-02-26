@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from 'react'
-import AdminContext from '../../../store/Admin/admin-context'
-import ProductsContext from '../../../store/Admin/products-context'
-import EditableInput from '../../UI/EditableInput'
-import ToggleBtn from '../../UI/ToggleBtn'
-import EditProductCategory from './EditProductCategory'
-import EditProductAttribute from './EditProductAttribute'
-import ImagesContainer from './ImagesContainer'
+import AdminContext from '@/store/Admin/admin-context'
+import ProductsContext from '@/store/Admin/products-context'
+import EditableInput from '@/components/UI/EditableInput'
+import ToggleBtn from '@/components/UI/ToggleBtn'
+import EditProductCategory from '@/components/Admin/Products/EditProductCategory'
+import EditProductAttribute from '@/components/Admin/Products/EditProductAttribute'
+import ImagesContainer from '@/components/Admin/Products/ImagesContainer'
 
 const SingleProduct: React.FC = () => {
 

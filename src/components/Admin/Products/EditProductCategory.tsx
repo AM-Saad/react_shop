@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
-import EditIcon from '../../UI/EditIcon'
-import AdminContext from '../../../store/Admin/admin-context'
-import CategoryInterface from '../../../modals/Category'
+import EditIcon from '@/components/UI/EditIcon'
+import AdminContext from '@/store/Admin/admin-context'
+import CategoryInterface from '@/modals/Category'
 
 
 
