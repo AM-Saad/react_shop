@@ -18,7 +18,7 @@ import { MapIcon } from '@heroicons/react/solid'
 
 import Search from '../Admin/Search/Search'
 const sidebarNavigation = [
-    { name: 'Home', href: '#', icon: HomeIcon, current: false },
+    { name: 'Home', href: '/admin/dashboard', icon: HomeIcon, current: false },
     { name: 'Orders', href: '/admin/orders', icon: CashIcon, current: false },
     { name: 'Products', href: '/admin/products', icon: ViewGridIcon, current: false },
     { name: 'Category', href: '/admin/category', icon: PhotographIcon, current: false },

@@ -6,7 +6,9 @@ import Home from '@/pages/Shop/Home'
 import Category from '@/pages/Shop/Category'
 import Shop from '@/pages/Shop/Shop'
 import Checkout from '@/pages/Shop/Checkout'
+
 import AdminLogin from '@/pages/Admin/Login'
+import AdminHome from '@/pages/Admin/Dashboard/Home'
 import Products from '@/pages/Admin/Product/Products'
 import Product from '@/pages/Admin/Product/Product'
 import AddProduct from '@/pages/Admin/Product/AddProduct'
@@ -57,6 +59,8 @@ const App: React.FC = () => {
 
                 <ContextPrivateRoute path="/admin/orders/:id" Provider={OrdersContextProvider} component={Order} />
                 <ContextPrivateRoute path="/admin/orders/" Provider={OrdersContextProvider} component={Orders} />
+
+                <PrivateRoute path="/admin/dashboard">  <AdminHome /> </PrivateRoute>
                 <PrivateRoute path="/admin/settings" ><Setting /> </PrivateRoute>
 
                 <Route path="/admin/login">  <AdminLogin /> </Route>
