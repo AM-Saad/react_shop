@@ -15,6 +15,11 @@ interface ProductResponse {
         purchasingPrice: number;
         quantity: number;
         refunded: number;
+        dimensions: {
+            length: number,
+            width: number,
+            height: number,
+        },
     }
     name: string;
     ratings: []
@@ -36,12 +41,12 @@ export interface ProductsMeta extends Meta {
         id?: string | null;
         min?: string | null;
         max?: string | null;
-        minQty?:string | null;
-        maxQty?:string | null;
+        minQty?: string | null;
+        maxQty?: string | null;
         slug?: string | null;
         category?: string[],
-        popular?: string | null 
-        featured?: string | null 
+        popular?: string | null
+        featured?: string | null
     }
 
 }

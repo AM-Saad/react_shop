@@ -195,7 +195,7 @@ export const AdminContextProvider: React.FC<{ children?: React.ReactNode; }> = (
         setAuthMeta((prevState) => { return { ...prevState, loading: true, error: null } })
 
         const { items, state, message }: Response = await AdminRepo.login(email, password)
-
+        console.log(items)
         if (state === State.SUCCESS) {
             setAuthMeta({ user: items.user, token: items.token, loading: false, error: null })
             setIsLoggedIn(true)
