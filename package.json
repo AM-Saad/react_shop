@@ -16,7 +16,9 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@headlessui/react": "^1.7.10",
     "@heroicons/react": "1.0.6",
+    "@react-three/fiber": "^8.13.4",
     "@types/node": "^18.13.0",
+    "@types/three": "^0.152.1",
     "apexcharts": "^3.37.1",
     "autoprefixer": "^10.4.13",
     "date-fns": "^2.29.3",
@@ -34,6 +36,7 @@
     "react-scripts": "^5.0.1",
     "react-toastify": "^9.1.1",
     "react-transition-group": "^4.4.5",
+    "three": "^0.154.0",
     "vite-plugin-env-compatible": "^1.1.1",
     "vite-tsconfig-paths": "^4.0.5",
     "yup": "^1.0.0"

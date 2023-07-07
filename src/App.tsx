@@ -6,6 +6,7 @@ import Home from '@/pages/Shop/Home'
 import Category from '@/pages/Shop/Category'
 import Shop from '@/pages/Shop/Shop'
 import Checkout from '@/pages/Shop/Checkout'
+import ShowAr from '@/pages/Shop/ShowAr'
 
 import AdminLogin from '@/pages/Admin/Login'
 import AdminHome from '@/pages/Admin/Dashboard/Home'
@@ -79,7 +80,7 @@ const App: React.FC = () => {
                 <Route path='/products/:slug' exact component={ProductDetail} />
                 <Route path='/login' exact component={Login} />
                 <Route path='/' exact component={Home} />
-                
+                <Route path='/showar/:slug' exact component={ShowAr} />
               </Switch>
             </Nav>
           </UserContextProvider>

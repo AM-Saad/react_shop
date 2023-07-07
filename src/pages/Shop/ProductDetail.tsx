@@ -2,7 +2,6 @@ import { useContext, useEffect, useState, useCallback, useReducer } from 'react'
 import { useParams } from 'react-router-dom'
 import Product from '@/modals/ProductResponse'
 import { SelectedAttribute } from '@/modals/Attribute'
-import useHttp from '@/hooks/use-http'
 import { StarIcon } from '@heroicons/react/solid'
 import UserContext from '@/store/User/user_context'
 import ProductGallery from '@/components/Shop/Product/ProductGallery'
@@ -11,8 +10,9 @@ import NotFound from '@/components/Shop/Product/NotFound'
 import HookResponse from '@/modals/HookResponse'
 import ProductResponse from '@/modals/ProductResponse'
 import FetchError from '@/components/Common/FetchError'
-
+import initialize from '@/components/Shop/Product/ShowAr'
 import AddToCartBtn from '@/components/UI/AddToCartBtn'
+import Button from '@/components/UI/Button'
 const reviews = { href: '#', average: 4, totalCount: 117 }
 
 
@@ -82,6 +82,9 @@ const ProductDetail = () => {
         set_product(product || null)
     }
 
+    const startAr = () => {
+        initialize(product?.images[0] || '')
+    }
     useEffect(() => {
         fetchProduct(slug)
     }, [slug])
@@ -99,7 +102,11 @@ const ProductDetail = () => {
 
 
                 <ProductGallery images={product?.images || []} productName={product?.name || ''} loading={productsMeta.loading} />
+                <div className='flex'>
 
+                    <a href={`/showar/${product?.slug}`} className="mt-4 bg-gray-600 p-2 rounded" >Show In Your Room</a>
+                </div>
+                {/* <div id="arcanvas" className='fixed top-0 left-0 h-full w-full'></div> */}
                 <div className="max-w-2xl mx-auto pt-10 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:pt-16 lg:pb-24 lg:px-8 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8">
                     <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
                         <h1 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">{product?.name}</h1>
